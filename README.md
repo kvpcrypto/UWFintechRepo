@@ -1,3 +1,3 @@
 # UWFintechRepo
-![guy programming](https://giphy.com/gifs/dommespace-domme-space-programador-qgQUggAC3Pfv687qPC.gif)
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
 ---
