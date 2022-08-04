@@ -26,17 +26,17 @@ print("The total number of loans in the list is", total_number_loans)
 # @TODO: Use the `sum` function to calculate the total of all loans in the list.
 # Print the total value of the loans
 # YOUR CODE HERE!
-total_loans = 0
-for loan in loan_costs:
-    total_loans += loan
+
+sum_of_loans = sum(loan_costs)
     
-print(f"The total of all loans is: {total_loans}")
+print(f"The total of all loans is: {sum_of_loans}")
 
 # What is the average loan amount from the list?
 # @TODO: Using the sum of all loans and the total number of loans, calculate the average loan price.
 # Print the average loan amount
 # YOUR CODE HERE!
-avg_loan_price = total_loans / total_number_loans
+
+avg_loan_price = sum_of_loans / total_number_loans
 print("The average loan price is", avg_loan_price)
 
 """Part 2: Analyze Loan Data.
@@ -84,6 +84,7 @@ print(f"The future value of the loan is {future_value} and there are {remaining_
 #   You'll want to use the **monthly** version of the present value formula.
 #   HINT: Present Value = Future Value / (1 + Discount_Rate/12) ** remaining_months
 # YOUR CODE HERE!
+
 present_value = future_value / (1 + 0.20/12) ** remaining_months
 print(f"The present value of the loan is {present_value}")
 
@@ -123,7 +124,7 @@ new_loan = {
 # YOUR CODE HERE!
 def calc_present_value(future_value, remaining_months, annual_discount_rate):
     present_value = future_value / (1 + annual_discount_rate/12) ** remaining_months
-    print(present_value)
+    #print(present_value) #checking value to make sure output for line 137 is the same, originally kept outputing same as line 88
     return present_value
 
 
@@ -131,8 +132,10 @@ def calc_present_value(future_value, remaining_months, annual_discount_rate):
 # @TODO: Use the function to calculate the present value of the new loan given below.
 #    Use an `annual_discount_rate` of 0.2 for this new loan calculation.
 # YOUR CODE HERE!
-print(calc_present_value(1000, 12, 0.2))
-print(f"The present value of the loan is: {present_value}")
+
+x = calc_present_value(1000, 12, 0.2)
+#set x to new 'present_value' otherwise outputs line 88
+print(f"The present value of the loan is: {x}")
 
 
 """Part 4: Conditionally filter lists of loans.
@@ -217,3 +220,5 @@ with open(output_path, 'w', newline='') as csvfile:
     csvwriter.writerow(header)
     for loan in inexpensive_loans:
         csvwriter.writerow([loan])
+#error with loan.value()...  AttributeError: 'int' object has no attribute 'value'
+#changed loan.value() to [loan] instead
